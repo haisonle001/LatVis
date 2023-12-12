@@ -47,8 +47,8 @@ Below are achieved results on some Vietnamese labeled datasets:
 
 | Dataset | Rouge-1 F1 | Rouge-2 F1 | Rouge-L F1 | AVG.R F1 |
 | :----------- | :-----------: | :-----------: | :-----------: | :-----------: |  
-| VNDS [[5]](#5) (zero shot) | 63.01 | 33.38 | 42.74 | 46.38 | 
-| VNDS [[5]](#5) | 63.01 | 33.38 | 42.74 | 46.38 | 
+| VNDS [[5]](#5) (zero shot) |  |  |  |  | 
+| VNDS [[5]](#5) |  |  |  |  | 
 | vi-WCEP (zero shot) | 48.03 | 23.36 | 37.73 | 36.37 |
 | vi-WCEP | 96.25 | 52.10 | 73.77 | 74.04 |
 
