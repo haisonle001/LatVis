@@ -41,7 +41,7 @@ At our very early stage, we use Hugging Face [rouge score](https://huggingface.c
 | :----------- | :-----------: | :-----------: | :-----------: |
 | BARTPho [[10]](#10) | 61.14 | 30.31 | 40.15 |  
 | ViT5 [[9]](#9) (our run) | **63.47** | **34.42** | **43.72** |  
-| LatVis | _63.01_ | _33.38_ | _42.74_ | _46.38_ |
+| LatVis | __63.01__ | __33.38__ | __42.74__ | __46.38__ |
 
 Therefore, for evaluation, we use [rouge scorer](https://github.com/pltrdy/rouge). We save our checkpoint model based on AVG.R F1.
 
@@ -53,7 +53,7 @@ Below are achieved results on some Vietnamese labeled datasets:
 | :----------- | :-----------: | :-----------: | :-----------: |
 | ViT5 [[9]](#9) (our run) | **38.46** | **22.90**| **32.82** |  
 | LatVis (zero shot) | 24.63 | 10.30 | 19.72 |  
-| LatVis | _37.43_ | _22.00_ | _31.78_ | 
+| LatVis | __37.43__ | __22.00__ | __31.78__ | 
 
 + vi-WCEP:
 
