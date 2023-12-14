@@ -9,7 +9,7 @@ We use the official code for PRIMERA [[1]](#1) and use our pipeline to make it b
 ![image](pipeline.png)
 
 ### Dataset
-At the early phase of this project, due to the lack of Vietnamese unlabeled multi-document dataset, we divided the Newscorpus [[7]](#7) into smaller parts and translated Newshead [[8]](#8)  using Google Translate API and ultilized it as our pretraining dataset. 
+At the early phase of this project, due to the lack of Vietnamese unlabeled multi-document dataset, we divided the Newscorpus [[7]](#7) into smaller parts and translated Newshead [[8]](#8) using Google Translate API and ultilized it as our pretraining dataset. 
 
 Below is the statistics of Vietnamese unlabeled dataset: 
 
@@ -35,22 +35,34 @@ You can download our dataset: [vi-WCEP](https://drive.google.com/drive/folders/1
 
 ### Evaluation
 
-At our very stage, we use Hugging Face [rouge score](https://huggingface.co/spaces/evaluate-metric/rouge) which is a wrapper around [Google Research reimplementation of ROUGE](https://github.com/google-research/google-research/tree/master/rouge) on VNDS [[5]](#5) - vietnamese benchmark for text summarization and our model achieves comparable performance with Vietnamese SOTA models. Later, we find out that the rouge scorer seem be to wrong with Vietnamese:
+At our very early stage, we use Hugging Face [rouge score](https://huggingface.co/spaces/evaluate-metric/rouge) which is a wrapper around [Google Research reimplementation of ROUGE](https://github.com/google-research/google-research/tree/master/rouge) on VNDS [[5]](#5) - vietnamese benchmark for text summarization and our model achieves comparable performance with Vietnamese SOTA models. Later, we find out that the rouge scorer seem be to wrong with Vietnamese, below are result of Vietnamese SOTA model such as BARTPho [[10]](#10), ViT5 [[9]](#9) on VNDS [[5]](#5):
 
-| Dataset | Rouge-1 F1 | Rouge-2 F1 | Rouge-L F1 | AVG.R F1 |
-| :----------- | :-----------: | :-----------: | :-----------: | :-----------: |  
-| VNDS [[5]](#5) | 63.01 | 33.38 | 42.74 | 46.38 | 
+| Model | Rouge-1 F1 | Rouge-2 F1 | Rouge-L F1 | 
+| :----------- | :-----------: | :-----------: | :-----------: |
+| BARTPho [[10]](#10) | 61.14 | 30.31 | 40.15 |  
+| ViT5 [[9]](#9) (our run) | **63.47** | **34.42** | **43.72** |  
+| LatVis | _63.01_ | _33.38_ | _42.74_ | _46.38_ |
 
-For evaluation, we use [rouge scorer](https://github.com/pltrdy/rouge). We save our checkpoint model based on AVG.R F1.
+Therefore, for evaluation, we use [rouge scorer](https://github.com/pltrdy/rouge). We save our checkpoint model based on AVG.R F1.
 
 Below are achieved results on some Vietnamese labeled datasets: 
 
-| Dataset | Rouge-1 F1 | Rouge-2 F1 | Rouge-L F1 | AVG.R F1 |
-| :----------- | :-----------: | :-----------: | :-----------: | :-----------: |  
-| VNDS [[5]](#5) (zero shot) |  |  |  |  | 
-| VNDS [[5]](#5) |  |  |  |  | 
-| vi-WCEP (zero shot) | 48.03 | 23.36 | 37.73 | 36.37 |
-| vi-WCEP | 96.25 | 52.10 | 73.77 | 74.04 |
++ VNDS [[5]](#5):
+
+| Model | Rouge-1 F1 | Rouge-2 F1 | Rouge-L F1 | 
+| :----------- | :-----------: | :-----------: | :-----------: |
+| ViT5 [[9]](#9) (our run) | **38.46** | **22.90**| **32.82** |  
+| LatVis (zero shot) | 24.63 | 10.30 | 19.72 |  
+| LatVis | _37.43_ | _22.00_ | _31.78_ | 
+
++ vi-WCEP:
+
+| Model | Rouge-1 F1 | Rouge-2 F1 | Rouge-L F1 | 
+| :----------- | :-----------: | :-----------: | :-----------: |
+| ViT5 [[9]](#9) (our run) |  |  |  |  
+| LatVis (zero shot) | 22.62 | 7.66 | 19.53 |  
+| LatVis | 39.08 | 20.33 | 33.47 | 30.96 |
+
 
 
 ### Future work
@@ -78,4 +90,6 @@ Below are achieved results on some Vietnamese labeled datasets:
 
 <a id="8">[8]</a> Gu, Xiaotao and Mao, Yuning and Han, Jiawei and Liu, Jialu and Yu, Hongkun and Wu, You and Yu, Cong and Finnie, Daniel and Zhai, Jiaqi and Zukoski, Nicholas. "Generating Representative Headlines for News Stories". Proc. of the the Web Conf. 2020
 
+<a id="9">[9]</a> Phan, Long and Tran, Hieu and Nguyen, Hieu and Trinh, Trieu H. "ViT5: Pretrained Text-to-Text Transformer for Vietnamese Language Generation". In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies: Student Research Workshop
 
+<a id="10">[10]</a> Nguyen Luong Tran and Duong Minh Le and Dat Quoc Nguyen. "BARTpho: Pre-trained Sequence-to-Sequence Models for Vietnamese". In Proceedings of the 23rd Annual Conference of the International Speech Communication Association
