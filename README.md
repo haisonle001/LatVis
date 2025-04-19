@@ -1,5 +1,6 @@
-# LatVis: Large-scale Task-specific Language Model for Low-resource Vietnamese Multi-document Summarization
+# LatVis: Large-scale Task-specific Language Model for Low-resource Vietnamese Multi-document Summarization 
 
+Accepted: [ACM Transactions on Asian and Low-Resource Language Information Processing](https://dl.acm.org/doi/abs/10.1145/3725848)
 ### Introduction
 We introduce LatVis, a large-scale task-specific language model that specifically pre-trained for Vietnamese multi-document summarization (MDS) task and a Vietnamese multi-document labeled dataset with ∼10,000 samples. To the best of our knowledge, we introduce one of the very first public larger-size MDS dataset and public language model that designed for Vietnamese MDS task and proves to be a potential approach for natural language processing tasks in less-resourced languages. 
 
